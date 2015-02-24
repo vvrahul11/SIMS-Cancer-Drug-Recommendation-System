@@ -1,4 +1,30 @@
-calculate_fold_change <- function(node_names, data_foldChange, datatype){
+decile_Calculation <- function(data_fold){
+  final_data = final_data[, -1:-2]
+  score_matrix= matrix(NA, 121, 24)
+  #Read file of fold change for 121 patients, 24 nodes
+  data_foldChange =read.csv("mRNA_pathway-31Jan2014.csv", as.is = T)
+  # Get the patient IDs to a vector
+  patientID = data_foldChange[,1][-1]
+  
+  for( i in 1:24){  
+    #sorted_data_fold = sort(data_fold[,i], decreasing = FALSE)
+    #decile_calculated<-cut(sorted_data_fold,quantile(sorted_data_fold,(0:10)/10),include.lowest=TRUE)
+    X = data_fold[,i]
+    decile_calculated<- cut(X,quantile(X,(0:10)/10),include.lowest=TRUE)  
+    score_matrix[,i] = decile_calculated
+  }
+  final_data = cbind(patientID, score_matrix)
+  return(final_data)
+}
+
+
+
+calculate_fold_change <- function(data_foldChange, datatype){
+  # Code to calculate the average fold change of nodes
+  node_names = c("Her_pathway", "CDK4_6", "PLK_AURKA_Kinesins", "ANGIOGENESIS", "ANGIOPOIETINS", "IMMUNO-Modulator", "PI3K", "MET",
+               "MEK", "ERK", "Antiapoptosis", "FGF", "mTOR_AKT_PTEN", "RAS", "TELOMERASE", "IGF_Warburg", "WNT", "PARP", "HDAC",
+               "JAK_STAT", "HEDGEHOG", "NOTCH", "DNA_REPAIR","OTHERS")
+  print(class(data_foldChange))
   # Get the patient IDs to a vector
   patientID = data_foldChange[,1][-1]
   # Get node names to a vector
@@ -26,39 +52,9 @@ calculate_fold_change <- function(node_names, data_foldChange, datatype){
   colnames(final_data) = node_names
   # Add patientIDs to the calculated mean fold change
   final_data = cbind(patientID, final_data)
+  final_data1 = decile_Calculation(final_data)
   return(final_data)
 }
   
-
-#################################################################
-######################  Main  ###################################
-# Code to calculate the average fold change of nodes
-node_names = c("Her_pathway", "CDK4_6", "PLK_AURKA_Kinesins", "ANGIOGENESIS", "ANGIOPOIETINS", "IMMUNO-Modulator", "PI3K", "MET",
-               "MEK", "ERK", "Antiapoptosis", "FGF", "mTOR_AKT_PTEN", "RAS", "TELOMERASE", "IGF_Warburg", "WNT", "PARP", "HDAC",
-               "JAK_STAT", "HEDGEHOG", "NOTCH", "DNA_REPAIR","OTHERS")
-
-#Extra nodes = "Resist_CDK4_6_inhibit", "Sensitivity_to_CDK4_6_inhibitors"?
-
-#Read file of fold change for 121 patients, 24 nodes
-data_foldChange1 =read.csv("mRNA_pathway-31Jan2014.csv", as.is = T)
-final_data_gene_expression = calculate_fold_change (node_names, data_foldChange1, "mRNA")
-write.csv(final_data_gene_expression, file = "~/Dropbox/winther/Data/final_data_gene_expression.csv")  
-
-data_foldChange2 =read.csv("mir_rev_path-31Jan2014-2.csv", as.is = T)
-final_data_miRNA = calculate_fold_change (node_names, data_foldChange2, "miRNA")
-write.csv(final_data_miRNA, file = "~/Dropbox/winther/Data/final_data_miRNA.csv")  
-
-mRNA = read.csv("final_data_gene_expression.csv", as.is = T)
-mRNA = mRNA[,-1]
-mRNA = mRNA[,-1]
-
-miRNA = read.csv("final_data_miRNA.csv", as.is = T)
-miRNA = miRNA[,-1]
-miRNA = miRNA[,-1]
-
-matched_expression_mRNA_miRNA = mRNA/miRNA
-#### Since miRNA NOTCH clumn is NA replace that coulumn with mRNA notch
-matched_expression_mRNA_miRNA[,22] = mRNA[, 22]
-write.csv(matched_expression_mRNA_miRNA, file = "~/Dropbox/winther/Data/matched_expression_mRNA_miRNA.csv")  
 
 

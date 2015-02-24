@@ -19,7 +19,8 @@ decile_Calculation <- function(data_fold){
 
 
 
-#decile calculation
+#decile calculation  # fold_change.csv file was created from final_data_geneexpression file..you can use the original 
+## file also but you have to remove the first two columns before startig to use it
 data_fold =read.csv("fold_change.csv", as.is = T)
 final_data1 = decile_Calculation(data_fold)
 write.csv(final_data1, file = "~/Dropbox/winther/Data/score_table_gene_expression.csv")
@@ -34,11 +35,11 @@ write.csv(final_data2, file = "~/Dropbox/winther/Data/score_table_mRNA_miRNA.csv
 ################# Mean score ###################
 mRNA_score = read.csv("score_table_gene_expression.csv", as.is = T)
 gene_names = mRNA_score[]
-mRNA_score = mRNA_score[,-1]
-mRNA_score = mRNA_score[,-1]
+mRNA_score = mRNA_score[,-1:-2]
+
 mRNA_miRNA_score = read.csv("score_table_mRNA_miRNA.csv", as.is = T)
-mRNA_miRNA_score = mRNA_miRNA_score[,-1]
-mRNA_miRNA_score = mRNA_miRNA_score[,-1]
+mRNA_miRNA_score = mRNA_miRNA_score[,-1:-2]
+
 
 # Calculate mean #
 total_score = (mRNA_score + mRNA_miRNA_score)/2
