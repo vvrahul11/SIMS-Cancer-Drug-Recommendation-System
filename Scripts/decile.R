@@ -47,7 +47,9 @@ colnames(total_score) = node_names
 write.csv(total_score, file = "~/Dropbox/winther/Data/total_score.csv")
 
 
-
+for(i in 1:24){
+  plot(c(1:121), sort(log(data_fold[,i])))
+}
 
 
 
