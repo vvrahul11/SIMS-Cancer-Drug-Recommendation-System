@@ -19,9 +19,9 @@ Shiny works with R version >=3.0.0 (as of 15th-January- 2015). If you have an ol
 > sudo apt-get remove r-base-core
 > sudo apt-get remove r-base sudo apt-get remove autoremove
 
-Download the latest version of R from CRAN​>= R-3.0.0 and install from source. Click on the below link to download the latest version of R - R-3.1.3
+Download the latest version of R from CRAN​>= R-3.0.0 and install from source. Click on the below link to download the latest version of R.
 
-http://cran.r-project.org/src/base/R-3/R-3.1.3.tar.gz
+http://cran.r-project.org/src/base/R-3/
 
 - Download the latest version and unzip the file.
 - Go to R directory and find the INSTALL file and follow the instructions. (Given below)
