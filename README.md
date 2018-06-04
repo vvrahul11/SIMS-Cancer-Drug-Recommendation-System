@@ -55,6 +55,7 @@ Installing shiny themes
 > sudo apt-get -y build-dep libcurl4-gnutls-dev apt-get -y install
 > sudo libcurl4-gnutls-dev
 
+Install RStudio from [here](https://www.rstudio.com/)
 # Usage
 * Standalone version 
 
