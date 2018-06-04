@@ -1,7 +1,0 @@
-mir_rev_path-31Jan2014 - Original with out correction Micro RNA
-mir_rev_path-31Jan2014-2 - decimal points corrected Micro RNA
-
-final_data_miRNA.csv - Mean fold change for all the genes calculated for 24 nodes - miRNA
-final_data_gene_expression.csv - Mean fold change for all the genes calculated for 24 nodes - mRNA
-
-matched_expression_mRNA_miRNA - fold change calculated(mRNA/miRNA)
