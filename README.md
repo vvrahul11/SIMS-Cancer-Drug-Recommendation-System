@@ -24,16 +24,22 @@ Download the latest version of R from CRAN​>= R-3.0.0 and install from source.
 http://cran.r-project.org/src/base/R-3/R-3.1.3.tar.gz
 
 - Download the latest version and unzip the file.
-- Go inside the directory and find the INSTALL file and follow the instructions. (Given below)
+- Go to R directory and find the INSTALL file and follow the instructions. (Given below)
 
 > ./configure --with-x=yes --enable-R-shlib
-( it is important to include --enable-R-shlib, otherwise Rstudio will not work with R)
+
 > make
+
 > make check
+
 > make pdf
+
 > make info
+
 > make install
+
 > make install-info
+
 > make install-pdf
 
 Installing shiny
@@ -46,16 +52,4 @@ Installing shiny themes
 
 > sudo apt-get -y build-dep libcurl4-gnutls-dev apt-get -y install
 > sudo libcurl4-gnutls-dev
-
-Shiny server (Open source edition​)
-
-To put shiny application on the web one need to have shiny server installed. Please find the
-instructions here.
-http://www.rstudio.com/products/shiny/shiny-server/
-
-Web Design
-You can find SIMS web version from the following [link](http://132.72.23.112:3838/sims/)
-
-
-Please let me know if you come acorss any problem related with SIMS.
 
