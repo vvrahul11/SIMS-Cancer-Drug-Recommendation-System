@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "calculate_mutation_score <- function(mutation_original, mrna){\n  #### Mutation information\n  mutation = apply(mutation_original, 2, function(x) gsub(\"^$|^ $\", 0, x))\n  mutation = apply(mutation, 2, function(x) gsub(\"WT\", 0, x))\n  mutation = apply(mutation, 2, function(x) gsub(\"wt\", 0, x))\n  mutation_matrix = matrix(NA, nrow = 123, ncol = 6)\n  for(i in 1:dim(mutation)[2]){\n    mutation[,i] <- as.character(mutation[,i])\n    mutation[,i][mutation[,i] != 0] <- 1  \n  }\n  ####### Mutation score #########\n  nodes = c(\"Her_pathway\",\"CDK4_6\",\"PLK_AURKA_Kinesins\",\"ANGIOGENESIS\",\"ANGIOPOIETINS\",\"IMMUNO-Modulator\",\"PI3K\",\"MET\",\"MEK\",\"ERK\",\"Antiapoptosis\",\"FGF\",\"mTOR_AKT_PTEN\",\"RAS\",\"TELOMERASE\",\"IGF_Warburg\",\"WNT\",\"PARP\",\"HDAC\",\"JAK_STAT\",\"HEDGEHOG\",\"NOTCH\",\"DNA_REPAIR\",\"OTHERS\")\n  mutation_score = matrix(0, nrow = 121, ncol = 24)\n  colnames(mutation_score) = nodes\n  mutated_genes = colnames(mutation)\n  mutation_score[,14]  = mutation[,1]\n  mutation_score[,1]  = mutation[,2]\n  mutation_score[,11]  = mutation[,3]\n  mutation_score[,14]  = mutation[,4]\n  mutation_score[,1]  = mutation[,5]\n  ### this should have been for P53 but since its expression is absent\n  ### another gene in the same pathway is selected bcz the score wil finally effect the node \n  mutation_score[,5]  = mutation[,6] \n  mutation_score[mutation_score == 1] <- 10\n  mutation_score_numeric = matrix(NA, nrow = 121, ncol = 24)  \n  for(i in 1:24){\n    column_numeric_mutation = sapply(mutation_score[,i], as.numeric)\n    mutation_score_numeric[,i] = column_numeric_mutation\n  }\n  return(mutation_score_numeric)\n}\n",
+    "created" : 1493271095431.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2289434973",
+    "id" : "B5B9EF54",
+    "lastKnownWriteTime" : 1449403718,
+    "last_content_update" : 1449403718,
+    "path" : "~/sims_web_bgu/SIMS/mutation_score.R",
+    "project_path" : "mutation_score.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

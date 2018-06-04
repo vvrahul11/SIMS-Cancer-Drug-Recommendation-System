@@ -1,0 +1,9 @@
+{
+    "path" : "~/sims_web_bgu/SIMS",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
