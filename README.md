@@ -6,6 +6,9 @@ Non-small cell lung cancer (NSCLC) is a leading cause of death worldwide. Target
 
 Keywords: Tri-therapy, NSCLC, targeted therapies, algorithm, pathway
 
+![]
+
+
 # Requirements
  * R
  * Shiny
@@ -18,7 +21,7 @@ Shiny works with R version >=3.0.0 (as of 15th-January- 2015). If you have an ol
 > sudo apt-get remove r-base-core
 > sudo apt-get remove r-base sudo apt-get remove autoremove
 
-Download the latest version of R from CRAN​>= R-3.0.0 and install from source. Click on the below link to download the latest version of R.
+Download the latest version of R from CRAN>= R-3.0.0 and install from source. Click on the below link to download the latest version of R.
 
 http://cran.r-project.org/src/base/R-3/
 
@@ -52,3 +55,19 @@ Installing shiny themes
 > sudo apt-get -y build-dep libcurl4-gnutls-dev apt-get -y install
 > sudo libcurl4-gnutls-dev
 
+# Usage
+* Standalone version 
+  > cd Standalone
+  > Rscripts SIMS.standlone.v1.0.R
+  
+  or 
+  
+  Open R-studio project file 'Standalone.Rproj'
+  
+  * Web version
+  > cd sims_web_bgu
+  > R
+  > library(shiny)
+  > shiny::runApp("SIMS")
+  
+  
