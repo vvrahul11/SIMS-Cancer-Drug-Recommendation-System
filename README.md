@@ -57,7 +57,9 @@ Installing shiny themes
 
 # Usage
 * Standalone version 
+
   > cd Standalone
+  
   > Rscripts SIMS.standlone.v1.0.R
   
   or 
@@ -65,9 +67,13 @@ Installing shiny themes
   Open R-studio project file 'Standalone.Rproj'
   
   * Web version
+  
   > cd sims_web_bgu
+  
   > R
+  
   > library(shiny)
+  
   > shiny::runApp("SIMS")
   
   
