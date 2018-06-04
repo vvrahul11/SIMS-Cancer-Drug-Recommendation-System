@@ -6,7 +6,7 @@ Non-small cell lung cancer (NSCLC) is a leading cause of death worldwide. Target
 
 Keywords: Tri-therapy, NSCLC, targeted therapies, algorithm, pathway
 
-![]
+![alt text](https://github.com/vvrahul11/SIMS---Cancer-Drug-Recommendation-System/blob/master/sims_web_bgu/SIMS/WIN.png)
 
 
 # Requirements
