@@ -64,7 +64,7 @@ Install RStudio from [here](https://www.rstudio.com/)
 
   > cd Standalone
   
-  > Rscripts SIMS.standlone.v1.0.R
+  > Rscripts SIMS.R
   
   or 
   
