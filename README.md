@@ -1,6 +1,6 @@
 # SIMS- Cancer-Drug-Recommendation-System
 
-## Warning: This is a very old project and does not follow the best coding standards or has never been cleaned up. 
+## Warning: This is a very old project and does not follow the best coding standards.
 
 
 # Abstract
