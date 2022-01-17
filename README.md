@@ -1,12 +1,15 @@
 # SIMS- Cancer-Drug-Recommendation-System
 
+## Warning: This is a very old project and does not follow the best coding standards or has never been cleaned up. 
+
+
 # Abstract
 
 Non-small cell lung cancer (NSCLC) is a leading cause of death worldwide. Targeted monotherapies produce high regression rates, albeit for limited patient subgroups, who inevitably succumb. We present a novel strategy for identifying customized combinations of triplets of targeted agents, utilizing a simplified interventional mapping system (SIMS) that merges knowledge about existent drugs and their impact on the hallmarks of cancer. Based on interrogation of matched lung tumor and normal tissue using targeted genomic sequencing, copy number variation, transcriptomics, and miRNA expression, the activation status of 24 interventional nodes was elucidated. An algorithm was developed to create a scoring system that enables ranking of the activated interventional nodes for each patient. Based on the trends of co-activation at interventional points, combinations of drug triplets were defined in order to overcome resistance. This methodology will inform a prospective trial to be conducted by the WIN consortium, aiming to significantly impact survival in metastatic NSCLC and other malignancies.
 
 Keywords: Tri-therapy, NSCLC, targeted therapies, algorithm, pathway
 
-![alt text](https://github.com/vvrahul11/SIMS---Cancer-Drug-Recommendation-System/blob/master/sims_web_bgu/SIMS/WIN.png)
+![alt text](https://github.com/vvrahul11/SIMS---Cancer-Drug-Recommendation-System/blob/master/sims_web_bgu/SIMS/www/WIN.png)
 
 
 # Requirements
